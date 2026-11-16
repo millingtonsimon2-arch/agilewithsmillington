@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Agile coaching, delivery leadership and practical learning. Helping people and teams find better ways of working.">
+
+  <title>Agile with Smillington | Agile Coach</title>
+
+  <style>
+    :root {
+      --navy: #101d35;
+      --navy-light: #1b2c49;
+      --teal: #55d6c2;
+      --purple: #a78bfa;
+      --yellow: #f5d477;
+      --white: #ffffff;
+      --light: #f4f7fa;
+      --text: #26344b;
+      --muted: #65738a;
+      --border: #e3e9ef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #293954;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      color: var(--teal);
+      font-size: 21px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    nav a {
+      color: #e3eaf3;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--teal);
+    }
+
+    /* BUTTONS */
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 7px;
+      background: var(--teal);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      background: #8be9da;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid var(--teal);
+      color: white;
+    }
+
+    .button-outline:hover {
+      background: var(--teal);
+      color: var(--navy);
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 25%, #263b5c 0, transparent 35%),
+        var(--navy);
+      color: white;
+      padding: 115px 0 120px;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.12;
+      max-width: 850px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--teal);
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      color: #d3ddec;
+      font-size: 19px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      color: #9eacc0;
+      font-size: 13px;
+      margin-top: 35px;
+    }
+
+    /* INTRO STRIP */
+
+    .intro-strip {
+      background: var(--light);
+      padding: 30px 0;
+    }
+
+    .intro-strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px 35px;
+      text-align: center;
+      color: var(--navy);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .intro-strip span::before {
+      content: "✦ ";
+      color: #149d8b;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(29px, 4vw, 40px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .about-copy h2 {
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 17px;
+    }
+
+    .about-highlight {
+      background: var(--navy);
+      color: white;
+      border-radius: 14px;
+      padding: 30px;
+    }
+
+    .about-highlight h3 {
+      color: var(--teal);
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .about-highlight p {
+      color: #d5deec;
+      margin-bottom: 15px;
+    }
+
+    /* EXPERIENCE AREAS */
+
+    .experience-section {
+      background: var(--light);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 27px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(16, 29, 53, 0.08);
+    }
+
+    .card-icon {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #e5f7f4;
+      color: #167c72;
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* COACHING */
+
+    .coaching-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .coaching-item {
+      padding: 27px;
+      border-left: 4px solid var(--teal);
+      background: var(--light);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .coaching-item h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .coaching-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* APPROACH */
+
+    .approach {
+      background: var(--navy);
+      color: white;
+    }
+
+    .approach .section-heading h2 {
+      color: white;
+    }
+
+    .approach .section-heading p {
+      color: #c8d3e2;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .approach-card {
+      border: 1px solid #394b66;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .approach-card h3 {
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .approach-card p {
+      color: #cbd6e5;
+      font-size: 14px;
+    }
+
+    /* AGILE ARCADE */
+
+    .arcade {
+      background: #171d3c;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arcade .section-heading h2 {
+      color: white;
+    }
+
+    .arcade .section-heading p {
+      color: #d1d5e6;
+    }
+
+    .arcade .eyebrow {
+      color: var(--yellow);
+    }
+
+    .arcade-tagline {
+      font-size: 23px;
+      color: var(--yellow);
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .arcade-intro {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      text-align: center;
+      color: #d1d5e6;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .game-card {
+      padding: 25px;
+      background: #252d51;
+      border: 1px solid #414a70;
+      border-radius: 12px;
+    }
+
+    .game-card .game-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .game-card h3 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .game-card p {
+      color: #c5cee2;
+      font-size: 14px;
+    }
+
+    .game-card.featured {
+      border-color: var(--teal);
+    }
+
+    .arcade-action {
+      text-align: center;
+    }
+
+    .arcade-action p {
+      color: #c5cee2;
+      margin-bottom: 20px;
+    }
+
+    /* EXPERIENCE AND QUALIFICATIONS */
+
+    .background-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .background-box {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .background-box h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin-bottom: 18px;
+    }
+
+    .background-box p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      background: #eaf5f4;
+      color: #246b65;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--light);
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--navy);
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--navy);
+      color: #c3cede;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--teal);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px 17px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .approach-grid,
+      .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding: 75px 0;
+      }
+
+      .cards,
+      .coaching-grid,
+      .approach-grid,
+      .game-grid,
+      .background-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section.content-section {
+        padding: 60px 0;
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="container nav-container">
+      <a href="#home" class="logo">Agile with Smillington</a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#coaching">How I Coach</a>
+        <a href="#arcade">Agile Arcade</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+      <div class="container">
+
+        <div class="eyebrow">
+          Agile Coaching · Delivery · Continuous Improvement
+        </div>
+
+        <h1>
+          Agile Coach.
+          <span>Bringing people, delivery and best practice together.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Helping individuals, teams and organisations find better
+          ways of working, improve collaboration and deliver meaningful
+          outcomes.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button" href="#coaching">Discover my approach</a>
+          <a class="button button-outline" href="#arcade">Explore Agile Arcade</a>
+        </div>
+
+        <p class="hero-note">
+          Practical experience. Curious thinking. A little different.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+
+    <div class="intro-strip">
+      <div class="container intro-strip-inner">
+        <span>Agile & Lean</span>
+        <span>Delivery Leadership</span>
+        <span>Product & Business</span>
+        <span>Technology</span>
+        <span>Organisational Change</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+
+    <section class="content-section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-copy">
+          <div class="eyebrow">A little about me</div>
+
+          <h2>More than a framework. More than a job title.</h2>
+
+          <p>
+            I'm an Agile Coach with a broad professional background
+            spanning delivery management, project and programme
+            management, product, business analysis, engineering
+            and organisational change.
+          </p>
+
+          <p>
+            Working across different industries, roles and delivery
+            environments has shaped my approach. I understand that
+            organisations are complex, people have different
+            perspectives and there is rarely a single answer to
+            improving how work gets done.
+          </p>
+
+          <p>
+            I'm interested in what makes teams and organisations
+            effective: how people collaborate, make decisions,
+            manage work, respond to feedback and deliver value.
+          </p>
+
+          <p>
+            My approach is pragmatic and people-focused, drawing on
+            Agile and Lean principles, practical delivery experience
+            and a belief in continuous learning.
+          </p>
+        </div>
+
+        <aside class="about-highlight">
+          <h3>My philosophy</h3>
+
+          <p>
+            Good ways of working aren't created by blindly following
+            a process or adopting another framework.
+          </p>
+
+          <p>
+            They come from understanding the challenges, creating
+            the right conditions for people to succeed and finding
+            practical ways to improve.
+          </p>
+
+          <p>
+            Sometimes that means challenging assumptions.
+            Sometimes it's about asking a better question.
+            And sometimes it's about trying something completely different.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- BROAD EXPERIENCE -->
+
+    <section class="content-section experience-section" id="experience">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">A broad perspective</div>
+
+          <h2>Connecting the dots across delivery</h2>
+
+          <p>
+            My experience spans different disciplines and
+            perspectives. This breadth helps me understand the
+            bigger picture and work across organisational boundaries.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card">
+            <div class="card-icon">◎</div>
+            <h3>Agile Coaching</h3>
+            <p>
+              Coaching individuals, teams and leaders, developing
+              collaborative ways of working and supporting continuous
+              improvement.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">↗</div>
+            <h3>Delivery & Programme Management</h3>
+            <p>
+              Bringing structure and clarity to complex delivery,
+              roadmaps, dependencies, governance and business outcomes.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">◇</div>
+            <h3>Product & Business Analysis</h3>
+            <p>
+              Connecting business needs, customer expectations,
+              requirements, prioritisation and value.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙</div>
+            <h3>Engineering & Technology</h3>
+            <p>
+              Understanding technical delivery, engineering
+              management, software development and quality.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">↻</div>
+            <h3>Business Transformation</h3>
+            <p>
+              Supporting organisational change, leadership,
+              service transition and the delivery of sustainable improvements.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✦</div>
+            <h3>Best Practice & Improvement</h3>
+            <p>
+              Applying appropriate frameworks, methods and principles
+              to the situation rather than treating process as the answer.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW I COACH -->
+
+    <section class="content-section" id="coaching">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">How I work</div>
+
+          <h2>Practical coaching. Meaningful improvement.</h2>
+
+          <p>
+            I believe the best improvements happen when people
+            understand their challenges, have the confidence to
+            experiment and take ownership of making things better.
+          </p>
+        </div>
+
+        <div class="coaching-grid">
+
+          <article class="coaching-item">
+            <h3>People & Leadership</h3>
+            <p>
+              Helping individuals and leaders navigate change,
+              develop confidence, improve conversations and
+              create the conditions for effective teams.
+            </p>
+          </article>
+
+          <article class="coaching-item">
+            <h3>Teams & Collaboration</h3>
+            <p>
+              Helping teams build shared ownership, improve
+              communication, understand their purpose and
+              work together more effectively.
+            </p>
+          </article>
+
+          <article class="coaching-item">
+            <h3>Flow & Delivery</h3>
+            <p>
+              Exploring work in progress, bottlenecks, dependencies,
+              prioritisation, feedback and how work moves through
+              a delivery system.
+            </p>
+          </article>
+
+          <article class="coaching-item">
+            <h3>Learning & Experimentation</h3>
+            <p>
+              Encouraging curiosity, practical experiments and
+              continuous improvement rather than assuming
+              yesterday's approach will solve tomorrow's problems.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+
+    <section class="content-section approach">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">A pragmatic mindset</div>
+
+          <h2>Less buzzword bingo. More meaningful improvement.</h2>
+
+          <p>
+            Agile is something you do, not just something you say.
+            I'm interested in understanding what is really happening
+            and helping people find approaches that work.
+          </p>
+        </div>
+
+        <div class="approach-grid">
+
+          <article class="approach-card">
+            <h3>Understand the system</h3>
+            <p>
+              Look beyond individual teams and processes.
+              Understand relationships, constraints, dependencies
+              and the wider environment in which people work.
+            </p>
+          </article>
+
+          <article class="approach-card">
+            <h3>Make improvement practical</h3>
+            <p>
+              Use appropriate tools and techniques, challenge
+              assumptions and focus on changes that make a
+              meaningful difference.
+            </p>
+          </article>
+
+          <article class="approach-card">
+            <h3>Learn by doing</h3>
+            <p>
+              Encourage people to experiment, reflect, adapt
+              and build their own understanding through
+              experience rather than theory alone.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AGILE ARCADE -->
+
+    <section class="content-section arcade" id="arcade">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">A different way to learn</div>
+
+          <h2>Welcome to Agile Arcade</h2>
+
+          <div class="arcade-tagline">Small games. Big ideas.</div>
+
+          <p>
+            What if learning Agile and Lean didn't mean sitting
+            through another presentation or memorising another
+            set of principles?
+          </p>
+        </div>
+
+        <div class="arcade-intro">
+          <p>
+            Agile Arcade is my growing collection of interactive
+            games, challenges and experiments designed to bring
+            Agile and Lean concepts to life.
+          </p>
+
+          <p>
+            Play around, experiment, make mistakes and discover
+            what happens. The aim is to create those lightbulb
+            moments that make learning memorable and useful.
+          </p>
+
+          <p style="margin-top: 20px; color: #f5d477; font-weight: bold;">
+            PLAY → REFLECT → LEARN → APPLY
+          </p>
+        </div>
+
+        <div class="game-grid">
+
+          <article class="game-card featured">
+            <div class="game-icon">🔀</div>
+            <h3>Multitasking Mayhem</h3>
+            <p>
+              Discover how switching between tasks affects focus,
+              efficiency and the flow of work.
+            </p>
+          </article>
+
+          <article class="game-card">
+            <div class="game-icon">👾</div>
+            <h3>The WIP Monster</h3>
+            <p>
+              Explore work in progress, bottlenecks, testing
+              and the challenges of too much work at once.
+            </p>
+          </article>
+
+          <article class="game-card">
+            <div class="game-icon">🎯</div>
+            <h3>Priority Shuffle</h3>
+            <p>
+              Explore prioritisation, competing demands
+              and making decisions about value.
+            </p>
+          </article>
+
+          <article class="game-card">
+            <div class="game-icon">🐞</div>
+            <h3>Bug Bash</h3>
+            <p>
+              Discover the importance of quality, collaboration
+              and finding problems early.
+            </p>
+          </article>
+
+          <article class="game-card">
+            <div class="game-icon">🧩</div>
+            <h3>Slice It Small</h3>
+            <p>
+              Explore smaller batches, incremental delivery
+              and getting feedback sooner.
+            </p>
+          </article>
+
+          <article class="game-card">
+            <div class="game-icon">💬</div>
+            <h3>Feedback Frenzy</h3>
+            <p>
+              Explore feedback loops, learning and the
+              value of sharing information early.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="arcade-action">
+          <p>
+            No lengthy manuals. No complicated theory.
+            Just practical learning through play.
+          </p>
+
+          <a class="button" href="#contact">Find out more about Agile Arcade</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INDUSTRIES AND QUALIFICATIONS -->
+
+    <section class="content-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Experience & background</div>
+          <h2>Different environments. Different challenges.</h2>
+          <p>
+            Experience across a range of sectors and professional
+            disciplines has helped shape a rounded, adaptable approach.
+          </p>
+        </div>
+
+        <div class="background-grid">
+
+          <div class="background-box">
+            <h3>Industry Experience</h3>
+
+            <div class="tag-list">
+              <span class="tag">Financial Services</span>
+              <span class="tag">Banking</span>
+              <span class="tag">Energy</span>
+              <span class="tag">Government</span>
+              <span class="tag">B2B</span>
+              <span class="tag">B2C</span>
+              <span class="tag">FTSE 100</span>
+            </div>
+
+            <p style="margin-top: 20px;">
+              Working across varied organisational environments,
+              business models and delivery challenges.
+            </p>
+          </div>
+
+          <div class="background-box">
+            <h3>Qualifications & Methods</h3>
+
+            <div class="tag-list">
+              <span class="tag">PRINCE2</span>
+              <span class="tag">MSP</span>
+              <span class="tag">PRINCE2 Agile</span>
+              <span class="tag">Agile</span>
+              <span class="tag">Lean</span>
+            </div>
+
+            <p style="margin-top: 20px;">
+              Experience applying established frameworks,
+              methods and practices pragmatically to support
+              effective delivery and change.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="content-section contact" id="contact">
+      <div class="container">
+
+        <div class="eyebrow">Let's connect</div>
+
+        <h2>Interested in better ways of working?</h2>
+
+        <p>
+          Whether you're exploring Agile coaching, looking for
+          practical ways to improve delivery or simply curious
+          about learning through play, I'd be happy to connect.
+        </p>
+
+        <p>
+          <strong>Contact details coming soon.</strong>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+      <p><strong>Agile with Smillington</strong></p>
+      <p>Agile Coaching · Delivery · Better Ways of Working</p>
+      <p style="margin-top: 10px;">
+        Small games. Big ideas. Continuous improvement.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
